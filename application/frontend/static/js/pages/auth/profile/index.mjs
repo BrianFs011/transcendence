@@ -19,65 +19,62 @@ export const Profile = () => {
   <div class="d-flex flex-column p-2 rounded mt-2">
     <h1 class="text-center" data-bs-theme="secondary">Perfil</h1>
   </div>
-  <div class="p-2 rounded mt-2">
-  <div class="d-flex  gap-2 align-items-center profile-container p-3 row">
-    <div class="d-flex col-md-6 flex-column gap-2 avatar-container p-1 justify-content-center" style="max-width: 200px">
-      <t-input-image theme="none" class="position-relative profile_avatar_edit_container">
-        <img id="avatar-preview" class="avatar" />
-        <span class="position-absolute top-50 start-50 translate-middle h-100 w-100 profile_avatar_edit_overlay"> 
-          <span class="position-absolute top-50 start-50 translate-middle">Editar</span>
-        </span>
-      </t-input-image>
-      <t-button id="avatar-save-button" class="d-block" btn-class="w-100">
-        Salvar
-      </t-button>
-    </div>
-    <div class="d-flex  col-md-6 flex-column">
-        <form id="update-form">
-          <div class="d-flex flex-wrap gap-1">
-          <t-input id="input-name" label="Nome" class="w-100"></t-input>
-          <t-errors id="update-form-errors"></t-errors>
-          <t-button id="save-button" class="d-block mt-3 w-100" btn-class="w-100">Salvar</t-button>
-          </div>
-          <div class="mt-3">
-            <strong>Email:</strong>
-            <span id="email-placeholder"></span>
-          </div>
-        </form>
-        <span><strong>Pontuação:</strong> ${session.player.stats.total_score}</span>
-        <span><strong>Tempo Jogado:</strong> ${session.player.stats.total_play_time}s</span>
-      </div>
-    </div>
 
-    <t-toast id="update-avatar-toast-success">
-      <strong slot="header">Sucesso!</strong>
-      Seu avatar foi atualizado com sucesso!
-    </t-toast>
-    <t-toast id="update-form-toast-success">
-      <strong slot="header">Sucesso!</strong>
-      Seu perfil foi atualizado com sucesso!
-    </t-toast>
-  </div>
+  		<div class="profile-content">
+				<div class="profile-info">
+					<div class="info-details">
+						<h2>Informações</h2>
+						<p><strong>Pontuação Total:</strong> ${session.player.stats.total_score}</p>
+						<p><strong>Tempo Jogado:</strong> ${session.player.stats.total_play_time}s</p>
+					</div>
+					<div class="avatar-section">
+						<t-input-image theme="none" class="profile-avatar">
+							<img id="avatar-preview" class="avatar-img" />
+						</t-input-image>
+						<t-button id="avatar-save-button" btn-class="w-100 mt-3">Salvar</t-button>
+					</div>
+				</div>
 
-  <div class="p-2 rounded d-flex gap-2 mt-3">
-    <div class="bg-secondary p-2 rounded w-100">
-      <h2>Torneios</h2>
+				<form id="update-form" class="update-form">
+					<div class="form-group">
+						<label for="email-placeholder">Email:</label>
+						<span id="email-placeholder"></span>
+					</div>
 
-      <t-loading id="loading-tournaments" loading="true">
-        <div id="tournaments-container" class="d-flex flex-column gap-2 overflow-auto rounded" style="height: 50vh">
+					<t-input id="input-name" label="Nome"></t-input>
 
-        </div>
-      </t-loading>
-    </div>
-    <div class="bg-secondary p-2 rounded w-100">
-      <h2>Partidas</h2>
+					<t-errors id="update-form-errors" class="mt-3"></t-errors>
+					<t-button id="save-button" btn-class="w-100 mt-3">Salvar</t-button>
+				</form>
 
-      <t-loading id="loading-matches" loading="true">
-        <div id="matches-container" class="d-flex flex-column gap-2 overflow-auto rounded" style="height: 50vh">
+				<t-toast id="update-avatar-toast-success">
+					<strong slot="header">Sucesso!</strong>
+					Seu avatar foi atualizado com sucesso!
+				</t-toast>
+				<t-toast id="update-form-toast-success">
+					<strong slot="header">Sucesso!</strong>
+					Seu perfil foi atualizado com sucesso!
+				</t-toast>
+			</div>
 
-        </div>
-      </t-loading>
-    </div>
+			<div class="profile-sections">
+				<div class="section tournaments">
+					<h2>Torneios</h2>
+					<t-loading id="loading-tournaments" loading="true">
+						<div id="tournaments-container" class="section-content">
+							<!-- Conteúdo dos torneios aqui -->
+						</div>
+					</t-loading>
+				</div>
+				<div class="section matches">
+					<h2>Partidas</h2>
+					<t-loading id="loading-matches" loading="true">
+						<div id="matches-container" class="section-content">
+							<!-- Conteúdo das partidas aqui -->
+						</div>
+					</t-loading>
+				</div>
+			</div>
   </div>
 `;
 
