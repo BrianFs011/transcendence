@@ -13,7 +13,7 @@ export class Modal extends HTMLElement {
       .class("d-flex p-4 rounded flex-column")
       .styles({
         position: "fixed",
-        background: "#212529",
+        background: "#fff",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",

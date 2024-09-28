@@ -1,5 +1,5 @@
 #app {
-	height: 100vh;
+	background: linear-gradient(120deg, #f0f4f8, #d9e2ec);
 }
 
 .profile_avatar_edit_overlay {
@@ -95,14 +95,14 @@ t-pong-canvas {
 }
 
 @media (min-width: 480px) {
-	
+
 
 	t-pong-canvas {
 		width: 330px;
 		height: 330px;
 		margin-bottom: 10px;
 	}
-	
+
 }
 
 @media (min-width: 780px) {
@@ -172,6 +172,219 @@ t-pong-canvas {
 
 
 
+
+.navbar {
+	padding: 15px 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	position: relative;
+	z-index: 10;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: #000;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	border: none;
+}
+
+.navbar-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar-logo {
+	width: 40px;
+	margin-right: 10px;
+}
+
+.navbar-toggler {
+	border: none;
+	background: none;
+}
+
+.nav-link {
+	color: #000;
+	font-size: 1rem;
+	padding: 10px 20px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	transition: background-color 0.3s, transform 0.3s;
+	border-radius: 8px;
+}
+
+.nav-link i {
+	margin-right: 8px;
+	font-size: 1.2rem;
+}
+
+.nav-link:hover {
+	background-color: #a4b1c2;
+	transform: translateY(-3px);
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card-option {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: space-between;
+	padding: 20px 0;
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card-option:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  background-size: contain;
+  background-position: center;
+	background-repeat: no-repeat;
+}
+
+.create-local-match {
+	background-image: url('/media/default/front/partida.png');
+}
+
+.create-match {
+  background-image: url('/media/default/front/online.png');
+}
+
+.create-tournament {
+  background-image:url('/media/default/front/torneio.png');
+}
+
+.find-match {
+  background-image: url('/media/default/front/buscar.png');
+}
+
+.profile-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.profile-header {
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+}
+
+.profile-summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+.avatar-section {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.avatar-container {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.avatar {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.avatar-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s;
+	border-radius: 50%;
+}
+
+.avatar-container:hover .avatar-overlay {
+	opacity: 1;
+}
+
+.info-section {
+	flex: 2;
+	display: flex;
+	flex-direction: column;
+}
+
+.info-item {
+	margin-bottom: 10px;
+}
+
+.profile-details {
+	margin-top: 20px;
+}
+
+.stats-section,
+.history-section {
+	margin-bottom: 20px;
+}
+
+.stats-section h2,
+.history-section h3 {
+	margin-bottom: 15px;
+}
+
+.history-card {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 15px;
+	background-color: #fff;
+}
+
+.history-card.tournaments {
+	margin-right: 10px;
+}
+
+.history-card.matches {
+	margin-left: 10px;
+}
+
+.overflow-auto {
+	overflow-y: auto;
+}
 
 @media (min-width: 1200px) {
 	t-pong-canvas {
