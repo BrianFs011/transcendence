@@ -67,7 +67,7 @@ services:
             - transcendence
         depends_on:
             - api
-        command: http --url=${NGROK_DOMAIN} nginx:443
+        command: http --url=${NGROK_DOMAIN} nginx:9090
 
 networks:
   transcendence:
