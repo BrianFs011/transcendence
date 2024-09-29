@@ -16,7 +16,7 @@ import { HomePage } from "./HomePage.mjs";
 
 export const router = new Router(
   [
-    new Route("/", HomePage),
+    new Route("/", Login),
     new Route("/login", Login),
     new Route("/register", Registration),
     new Route("/auth/", Home),
