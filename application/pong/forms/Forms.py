@@ -32,17 +32,17 @@ class ArrayUUIDsField(forms.Field):
 
         if self.exact and len(ids) != self.exact:
             raise ValidationError(
-                _("Esta lista deve ser igual à " + str(self.exact)), code="exact"
+                _("Esta lista deve ser igual a " + str(self.exact)), code="exact"
             )
         else:
             if self.min and len(ids) < self.min:
                 raise ValidationError(
-                    _("Esta lista deve ser maior ou igual à " + str(self.min)),
+                    _("Esta lista deve ser maior ou igual a " + str(self.min)),
                     code="min",
                 )
             if self.max and len(ids) > self.max:
                 raise ValidationError(
-                    _("Esta lista deve ser menor ou igual à " + str(self.max)),
+                    _("Esta lista deve ser menor ou igual a " + str(self.max)),
                     code="max",
                 )
 

@@ -42,7 +42,7 @@
 	align-items: center;
 }
 
-.avatar {
+.avatar-img {
 	max-height: 200px;
 	max-width: 200px;
 	object-fit: cover;

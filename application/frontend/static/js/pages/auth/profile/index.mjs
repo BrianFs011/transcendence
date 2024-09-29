@@ -87,7 +87,7 @@ export const Profile = () => {
   const t_input_image_avatar = page.element.querySelector("t-input-image");
   const img_avatar_preview = page.element.querySelector("#avatar-preview");
   const t_button_avatar_save = page.element.querySelector(
-    "#avatar-save-button",
+    "#avatar-save-button"
   );
 
   const form = page.element.querySelector("#update-form");
@@ -97,10 +97,10 @@ export const Profile = () => {
   const email_placeholder = form.querySelector("#email-placeholder");
 
   const t_toast_success_update_avatar = page.element.querySelector(
-    "#update-avatar-toast-success",
+    "#update-avatar-toast-success"
   );
   const t_toast_success_update_form = page.element.querySelector(
-    "#update-form-toast-success",
+    "#update-form-toast-success"
   );
 
   t_input_name.value = session.player.name;
