@@ -73,7 +73,7 @@ export function useCreateMatch(page) {
   if (t_button_local_match_create) {
     t_button_local_match_create.button.addEventListener("click", async () => {
       t_button_local_match_create.setLoading(true);
-  
+
       try {
         await MatchService.createMatch({
           players_id: [session.player.id],
