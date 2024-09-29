@@ -58,17 +58,6 @@ services:
         depends_on:
             - api
 
-    ngrok:
-        container_name: ngrok
-        image: ngrok/ngrok:latest
-        environment:
-            - NGROK_AUTHTOKEN=${NGROK_AUTH_TOKEN}
-        networks:
-            - transcendence
-        depends_on:
-            - api
-        command: http --url=${NGROK_DOMAIN} nginx:443
-
 networks:
   transcendence:
     name: transcendence
